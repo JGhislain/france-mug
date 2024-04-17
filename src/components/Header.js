@@ -6,7 +6,7 @@ import logoTitleImg from '../assets/header/logo-titre.png';
 import contactImg from '../assets/header/contact.png';
 import facebookImg from '../assets/header/facebook.png';
 import boutiqueImg from '../assets/header/acceder-boutique.png';
-import etagereBois from '../assets/header/texture-table-en-bois.jpg'
+import etagereBois from '../assets/header/header-img.png'
 
 const Header = () => {
   return (
@@ -18,26 +18,26 @@ const Header = () => {
                 </div>
                 <div className="logo-title">
                     <img src={logoTitleImg} alt="Logo France Mug" />
-                    <h1 className='header-title'>France Mug</h1> {/* Ce H1 sera retiré en CSS */}
+                    <h1 className='header-title'>France Mug</h1>
                 </div>
                 <nav className="header-navigation">
                     <div className="contact-follow">
-                        <a href="mailto:contact@example.com">
-                        <img src={contactImg} alt="Contact" />
+                        <a href="mailto:contact@example.com" className='contact-link'>
+                        <img src={contactImg} alt="Contact" className='img-contact' />
                         </a>
-                        <a href="https://www.facebook.com">
-                        <img src={facebookImg} alt="Facebook" />
+                        <a href="https://www.facebook.com" className='facebook-link'>
+                        <img src={facebookImg} alt="Facebook" className='img-facebook' />
                         </a>
                     </div>
                     <div className="boutique-link">
-                        <a href="/boutique"> {/* Remplace par le lien réel vers la boutique */}
-                        <img src={boutiqueImg} alt="Accéder à la boutique" />
+                        <a href="/boutique" className='boutique-link'>
+                        <img src={boutiqueImg} alt="Accéder à la boutique" className='img-boutique' />
                         </a>
                     </div>
                 </nav>
             </div>
-            <div className="header-slogan">
-                <h2 className='header-slogan'>Chaque Mug est une pépite d'humour et de bonne humeur</h2>
+            <div className="header-slogan-container">
+                <h2 className='header-slogan'>Chaque Mug est une PÉPITE D'HUMOUR et de BONNE HUMEUR</h2>
             </div>
         </div>
         <span className='etagere-contain'>

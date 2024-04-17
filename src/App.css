@@ -1,5 +1,5 @@
 .App {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Gotham-Black', sans-serif;
 }
 
 .header-contain {
@@ -13,8 +13,50 @@
   justify-content: space-evenly;
 }
 
+.header-navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+}
+
+.contact-follow {
+  margin: 0 0 25px 0;
+}
+
+.contact-link {
+  display: inline-block;
+}
+
+.facebook-link {
+  padding-left: 23px;
+  display: inline-block;
+}
+
+.boutique-link {
+  display: block;
+  position: relative;
+  left: 10px;
+}
+
+.header-title {
+  text-indent: -9999px;
+  overflow: hidden;
+  margin: 0;
+}
+
+.header-slogan-container {
+  display: flex;
+  justify-content: center;
+}
+
 .header-slogan {
   margin: 0;
+  font-size: 2.4em;
+  font-weight: bold;
+  width: 27%;
+  text-align: center;
+  color: #FFF;
 }
 
 .img-etagere {
