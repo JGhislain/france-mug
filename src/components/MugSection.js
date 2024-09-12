@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import MugDesign from './MugDesign';
 import mugDesignsData from '../mugDesigns.json';
-import etagereBois from '../assets/header/header-img.png';
+import etagereBois from '../assets/header/header-img.webp';
 
 const MugSection = () => {
   const mugClasses = ["mug1-design", "mug2-design", "mug3-design"];

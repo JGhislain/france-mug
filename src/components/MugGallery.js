@@ -1,7 +1,12 @@
 //GENERATION DE LA MINIATURE EN MANUELLE
 
-import React, { useState } from 'react';
-import ImageLightbox from './ImageLightbox';
+import React, { useState, Suspense, lazy } from 'react';
+
+// Supprime l'import standard
+// import ImageLightbox from './ImageLightbox'; 
+
+// Lazy loading du composant ImageLightbox
+const ImageLightbox = lazy(() => import('./ImageLightbox'));
 
 const MugGallery = ({ mainImage, thumbnailImages, video, videoThumbnail }) => {
   const [selectedMedia, setSelectedMedia] = useState(mainImage);
@@ -32,7 +37,7 @@ const MugGallery = ({ mainImage, thumbnailImages, video, videoThumbnail }) => {
             Your browser does not support the video tag.
           </video>
         ) : (
-          <img src={selectedMedia} alt="Mug principal" />
+          <img src={selectedMedia} alt="Mug principal" loading="lazy" />
         )}
       </div>
       <div className="thumbnails">
@@ -43,6 +48,7 @@ const MugGallery = ({ mainImage, thumbnailImages, video, videoThumbnail }) => {
             alt={`Mug thumbnail ${index + 1}`}
             onClick={() => handleThumbnailClick(thumbnail)}
             className="thumbnail"
+            loading="lazy"
           />
         ))}
         {video && videoThumbnail && (
@@ -51,23 +57,29 @@ const MugGallery = ({ mainImage, thumbnailImages, video, videoThumbnail }) => {
               src={videoThumbnail}
               alt="Video thumbnail"
               className="thumbnail video-thumbnail"
+              loading="lazy"
             />
             <div className="play-icon"></div>
           </div>
         )}
       </div>
+      
+      {/* Utilisation de Suspense pour charger ImageLightbox de manière asynchrone */}
       {isLightboxOpen && (
-        <ImageLightbox
-          media={media}
-          onClose={closeLightbox}
-          initialIndex={media.findIndex(item => item.src === selectedMedia)}
-        />
+        <Suspense fallback={<div>Chargement de la lightbox...</div>}>
+          <ImageLightbox
+            media={media}
+            onClose={closeLightbox}
+            initialIndex={media.findIndex(item => item.src === selectedMedia)}
+          />
+        </Suspense>
       )}
     </div>
   );
 };
 
 export default MugGallery;
+
 
 /*
   {

@@ -3,10 +3,10 @@ import MugSection from './MugSection';
 
 // Chemins vers les images utilisées dans le header
 import realiseEnFranceImg from '../assets/header/REALISE_FRANCE.png';
-import logoTitleImg from '../assets/header/logo-titre2.png';
-import contactImg from '../assets/header/contact.png';
-import facebookImg from '../assets/header/facebook.png';
-import boutiqueImg from '../assets/header/acceder-boutique.png';
+import logoTitleImg from '../assets/header/logo-titre2.webp';
+import contactImg from '../assets/header/contact.webp';
+import facebookImg from '../assets/header/facebook.webp';
+import boutiqueImg from '../assets/header/acceder-boutique.webp';
 
 const Header = () => {
   return (
