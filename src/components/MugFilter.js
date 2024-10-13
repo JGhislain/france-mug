@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import mugsData from '../catalogueMugs.json';
 
 const MugFilter = ({ children }) => {
@@ -6,7 +6,8 @@ const MugFilter = ({ children }) => {
   const [activeCategory, setActiveCategory] = useState('Tout');
   const [loading, setLoading] = useState(false); // Indicateur de chargement
 
-  const handleFilter = (category) => {
+  // Mémoisation de la fonction de filtrage pour éviter de recréer la fonction à chaque re-render
+  const handleFilter = useCallback((category) => {
     setActiveCategory(category);
     setLoading(true); // Active le chargement
 
@@ -21,8 +22,8 @@ const MugFilter = ({ children }) => {
         setFilteredMugs(filtered);
       }
       setLoading(false); // Désactive le chargement après l'application du filtre
-    }, 500); // Simule un délai pour imiter un temps de chargement
-  };
+    }, 0); // Simule un délai pour imiter un temps de chargement
+  }, []);
 
   return children({
     filteredMugs,

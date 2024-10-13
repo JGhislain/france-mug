@@ -35,6 +35,7 @@ const ImageLightbox = ({ media, onClose, initialIndex = 0 }) => {
               src={media[currentIndex].src}
               alt={`Mug ${currentIndex + 1}`}
               className="lightbox-image"
+              loading='lazy'
             />
           )}
         </div>

@@ -1,72 +1,77 @@
-import React from 'react';
+import React, { memo, useCallback } from 'react';
 
-const NavigationBar = ({ handleFilter, activeCategory }) => {
+const NavigationBar = memo(({ handleFilter, activeCategory }) => {
+  // Mémoisation des fonctions de clic pour éviter les re-rendus inutiles
+  const handleClick = useCallback((category) => {
+    handleFilter(category);
+  }, [handleFilter]);
+
   return (
     <nav>
       <ul className="nav-bar">
         <li 
           className={activeCategory === 'Tout' ? 'active' : ''} 
-          onClick={() => handleFilter('Tout')}
+          onClick={() => handleClick('Tout')}
         >
           Toute notre collection
         </li>
         <li 
           className={activeCategory === 'famille' ? 'active' : ''} 
-          onClick={() => handleFilter('famille')}
+          onClick={() => handleClick('famille')}
         >
           Famille
         </li>
         <li 
           className={activeCategory === 'animaux' ? 'active' : ''} 
-          onClick={() => handleFilter('animaux')}
+          onClick={() => handleClick('animaux')}
         >
           Animaux
         </li>
         <li 
           className={activeCategory === 'geek' ? 'active' : ''} 
-          onClick={() => handleFilter('geek')}
+          onClick={() => handleClick('geek')}
         >
           Geeks
         </li>
         <li 
           className={activeCategory === 'sport' ? 'active' : ''} 
-          onClick={() => handleFilter('sport')}
+          onClick={() => handleClick('sport')}
         >
           Sports & Loisirs
         </li>
         <li 
           className={activeCategory === 'humour' ? 'active' : ''} 
-          onClick={() => handleFilter('humour')}
+          onClick={() => handleClick('humour')}
         >
           Humour
         </li>
         <li 
           className={activeCategory === 'quotidien' ? 'active' : ''} 
-          onClick={() => handleFilter('quotidien')}
+          onClick={() => handleClick('quotidien')}
         >
           Quotidien
         </li>
         <li 
           className={activeCategory === 'amour' ? 'active' : ''} 
-          onClick={() => handleFilter('amour')}
+          onClick={() => handleClick('amour')}
         >
           Amour
         </li>
         <li 
           className={activeCategory === 'travail' ? 'active' : ''} 
-          onClick={() => handleFilter('travail')}
+          onClick={() => handleClick('travail')}
         >
           Travail
         </li>
         <li 
           className={activeCategory === 'adulte' ? 'active' : ''} 
-          onClick={() => handleFilter('adulte')}
+          onClick={() => handleClick('adulte')}
         >
           Adulte
         </li>
       </ul>
     </nav>
   );
-};
+});
 
 export default NavigationBar;

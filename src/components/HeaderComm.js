@@ -4,7 +4,7 @@ const HeaderComm = () => {
   return (
     <div className='header-comm'>
       <h3 className='title-comm'>
-        <span className='title-text-comm'>Une idée cadeau originiale !</span>
+        <span className='title-text-comm'>Une idée cadeau original !</span>
       </h3>
       <div className='slogan-comm'>
         <p className='slogan-text-comm'>Avec FRANCE MUG®, offrez un mug humoristique</p>
