@@ -1,69 +1,38 @@
 import React from 'react';
-
+import boutiqueImg from '../assets/header/acceder-boutique.webp';
 import contactImg from '../assets/header/contact.png';
 import facebookImg from '../assets/header/facebook.png';
-import impSurface from '../assets/footer/ico_360_degres.png';
-import ceraQuality from '../assets/footer/ico_meilleur.png';
-import washingResist from '../assets/footer/ico_lave_vaiss.png';
-import antiHot from '../assets/footer/ico_anti_brul.png';
-import mugCapacity from '../assets/footer/ico_quantite.png';
-import antiChoc from '../assets/footer/ico_anti-choc.png';
 
 const Footer = () => {
     return (
         <footer>
-            <div className='caract-mug-container'>
-                <div className='caract-icones-container'>
-                    <div className='imp-surface-container icones-container'>
-                        <img src={impSurface} alt='icone 360 degrés' className='icone-360 icone-caract' loading="lazy" />
-                        <div className='text-caract-container'> 
-                            <p className='text-caract title-caract'>IMPRESSION SUR</p>
-                            <p className='text-caract title-caract'>TOUTE LA SURFACE</p>
-                        </div>
+            <div className='footer-comm'>
+                <h3 className='title-comm'>
+                    <span className='title-text-comm'>Une idée cadeau original !</span>
+                </h3>
+                <div className='slogan-comm'>
+                    <p className='slogan-text-comm'>Avec FRANCE MUG®, offrez un mug humoristique</p>
+                    <p className='slogan-text-comm'>et personnalisé pour faire plaisir à votre famille,</p>
+                    <p className='slogan-text-comm'>collègues ou amis.</p>
+                </div>
+                <div className='text-comm-container'>
+                    <div className='under-comm-container'>
+                    <h4 className='under-title-comm'>Le mug en céramique c'est le cadeau idéal à petit prix !</h4>
+                    <div className='text-comm text-comm-top'>
+                        Que ce soit pour une occasion spéciale: <span className='bold-text-comm'>anniversaire, Saint-Valentin, fête des mères, fête des grands-mères, fête des pères, départ d'un collègue à la retraite, crémaillère, enterrement de vie de jeune fille... </span>ou pour votre ami geek fan de jeux vidéos, votre frère qui a un humour décalé, votre sœur fan de licornes, votre amoureuse fan de chats, de chiens ou que votre moitié aime simplement prendre son chocolat chaud, son thé ou son café dans une belle tasse.
                     </div>
-                    <div className='anti-hot-container icones-container'>
-                        <img src={antiHot} alt='icone anti-brûlure' className='icone-anti-hot icone-caract' loading="lazy" />
-                        <div className='text-caract-container'>
-                            <p className='text-caract title-caract'>ANSE</p>
-                            <p className='text-caract title-caract'>ANTI-BRÛLURES</p>
-                        </div>
                     </div>
-                    <div className='cera-quality-container icones-container'>
-                        <img src={ceraQuality} alt='icone haute résistance' className='icone-cera-quality icone-caract' loading="lazy" />
-                        <div className='text-caract-container'>
-                            <p className='text-caract title-caract'>CÉRAMIQUE AAA</p>
-                            <p className='text-caract title-caract'>HAUTE RÉSISTANCE</p>
-                            <p className='text-caract title-caract'>LA MEILLEURE QUALITÉ</p>
-                        </div>
+                    <div className='under-comm-container'>
+                    <h4 className='under-title-comm'>Les visuels sont des créations originales réalisées par notre équipe de graphistes passionnés !</h4>
+                    <div className='text-comm'>
+                        Humour et Originalité: Faites sensation ! Ce n'est pas seulement un mug, c'est une œuvre d'art, <span className='bold-text-comm'>imprimé en haute définition,</span>
                     </div>
-                    <div className='mug-capacity-container icones-container'>
-                        <img src={mugCapacity} alt='icone capacité du mug' className='icone-mug-capacity icone-caract' loading="lazy" />
-                        <div className='text-caract-container'>
-                            <p className='text-caract title-caract'>CAPACITÉ 330 ML</p>
-                        </div>
-                        <div className='under-caract-container'>
-                            <p className='text-caract under-text-caract'>Il est assez grand pour vos ambitions</p>
-                            <p className='text-caract under-text-caract'>caféinées, théinées ou chocolatées</p>
-                        </div>
+                    <div className='text-comm'>
+                        Confectionné dans notre atelier en <span className='bold-text-comm'>France dans le Grand-Est:</span>
                     </div>
-                    <div className='washing-resist-container icones-container'>
-                        <img src={washingResist} alt='icone résistant au lave-vaisselle et micro-onde' className='icone-washing icone-caract' loading="lazy" />
-                        <div className='text-caract-container'>
-                            <p className='text-caract title-caract'>RÉSISTANT AU</p>
-                            <p className='text-caract title-caract'>LAVE-VAISSELLE</p>
-                            <p className='text-caract title-caract'>MICRO-ONDES</p>
-                        </div>
+                    <div className='text-comm'>
+                        Ce mug est le reflet de notre engagement envers l'excellence et la passion. <span className='bold-text-comm'>Fabriqué avec le cœur.</span>
                     </div>
-                    <div className='anti-choc-container icones-container'>
-                        <img src={antiChoc} alt='icone anti-choc pour le transport' className='icone-anti-choc icone-caract' loading="lazy" />
-                        <div className='text-caract-container'>
-                            <p className='text-caract title-caract'>BOÎTE DE TRANSPORT</p>
-                            <p className='text-caract title-caract'>ANTI-CHOC RENFORCÉE</p>
-                        </div>
-                        <div className='under-caract-container'>
-                            <p className='text-caract under-text-caract'>Livré dans un écrin de POLYSTYRÈNE pour</p>
-                            <p className='text-caract under-text-caract'>une arrivée à destination garantie sans casse</p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -83,6 +52,11 @@ const Footer = () => {
                         </a>
                         <a href="https://www.facebook.com" className='facebook-link'>
                             <img src={facebookImg} alt="Facebook" target='blank_' className='img-facebook' />
+                        </a>
+                    </div>
+                    <div className="boutique-link">
+                        <a href="https://www.amazon.fr/stores/FranceMug%C2%AE/page/493046BF-FF94-4025-B14B-FC0230B27C36" target='blank_' className='boutique-link'>
+                            <img src={boutiqueImg} alt="Accéder à la boutique" className='img-boutique' loading="lazy" />
                         </a>
                     </div>
                 </div>

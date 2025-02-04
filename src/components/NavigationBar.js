@@ -10,61 +10,61 @@ const NavigationBar = memo(({ handleFilter, activeCategory }) => {
     <nav>
       <ul className="nav-bar">
         <li 
-          className={activeCategory === 'Tout' ? 'active' : ''} 
+          className={`cat-button ${activeCategory === 'Tout' ? 'active' : ''}`}
           onClick={() => handleClick('Tout')}
         >
           Toute notre collection
         </li>
         <li 
-          className={activeCategory === 'famille' ? 'active' : ''} 
+          className={`cat-button ${activeCategory === 'famille' ? 'active' : ''}`}
           onClick={() => handleClick('famille')}
         >
           Famille
         </li>
         <li 
-          className={activeCategory === 'animaux' ? 'active' : ''} 
+          className={`cat-button ${activeCategory === 'animaux' ? 'active' : ''}`}
           onClick={() => handleClick('animaux')}
         >
           Animaux
         </li>
         <li 
-          className={activeCategory === 'geek' ? 'active' : ''} 
+          className={`cat-button ${activeCategory === 'geek' ? 'active' : ''}`}
           onClick={() => handleClick('geek')}
         >
           Geeks
         </li>
         <li 
-          className={activeCategory === 'sport' ? 'active' : ''} 
+          className={`cat-button ${activeCategory === 'sport' ? 'active' : ''}`}
           onClick={() => handleClick('sport')}
         >
           Sports & Loisirs
         </li>
         <li 
-          className={activeCategory === 'humour' ? 'active' : ''} 
+          className={`cat-button ${activeCategory === 'humour' ? 'active' : ''}`}
           onClick={() => handleClick('humour')}
         >
           Humour
         </li>
         <li 
-          className={activeCategory === 'quotidien' ? 'active' : ''} 
+          className={`cat-button ${activeCategory === 'quotidien' ? 'active' : ''}`}
           onClick={() => handleClick('quotidien')}
         >
           Quotidien
         </li>
         <li 
-          className={activeCategory === 'amour' ? 'active' : ''} 
+          className={`cat-button ${activeCategory === 'amour' ? 'active' : ''}`}
           onClick={() => handleClick('amour')}
         >
           Amour
         </li>
         <li 
-          className={activeCategory === 'travail' ? 'active' : ''} 
+          className={`cat-button ${activeCategory === 'travail' ? 'active' : ''}`}
           onClick={() => handleClick('travail')}
         >
           Travail
         </li>
         <li 
-          className={activeCategory === 'adulte' ? 'active' : ''} 
+          className={`cat-button ${activeCategory === 'adulte' ? 'active' : ''}`}
           onClick={() => handleClick('adulte')}
         >
           Adulte

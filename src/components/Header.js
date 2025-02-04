@@ -6,7 +6,6 @@ import realiseEnFranceImg from '../assets/header/REALISE_FRANCE.png';
 import logoTitleImg from '../assets/header/logo-titre2.webp';
 import contactImg from '../assets/header/contact.webp';
 import facebookImg from '../assets/header/facebook.webp';
-import boutiqueImg from '../assets/header/acceder-boutique.webp';
 
 const Header = () => {
   return (
@@ -22,23 +21,18 @@ const Header = () => {
                 </div>
                 <nav className="header-navigation">
                     <div className="contact-follow">
-                        <a href="mailto:contact@example.com" className='contact-link'>
+                        <a href="mailto:dev@le-point-com.fr" className='contact-link'>
                             <img src={contactImg} alt="Contact" className='img-contact' loading="lazy" />
                         </a>
                         <a href="https://m.facebook.com/FrMug/" target='blank_' className='facebook-link'>
                             <img src={facebookImg} alt="Facebook" className='img-facebook' loading="lazy" />
                         </a>
                     </div>
-                    <div className="boutique-link">
-                        <a href="https://www.amazon.fr/stores/FranceMug%C2%AE/page/493046BF-FF94-4025-B14B-FC0230B27C36" target='blank_' className='boutique-link'>
-                            <img src={boutiqueImg} alt="Accéder à la boutique" className='img-boutique' loading="lazy" />
-                        </a>
-                    </div>
                 </nav>
             </div>
             <div className="header-slogan-container">
                 <h2 className='header-slogan'>
-                    <p className='title2-text title2-minus'>Chaque Mug est une</p>
+                    <p className='title2-minus'>Chaque Mug est une</p>
                     <p className='title2-text'>PÉPITE D'HUMOUR</p>
                     <p className='title2-text'><span className='title2-minus'>et de</span><span className='title2-text'> BONNE HUMEUR</span></p>
                 </h2>
