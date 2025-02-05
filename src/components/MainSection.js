@@ -11,6 +11,7 @@ const MugList = lazy(() => import('./MugList'));
 const MainSection = () => {
   return (
     <main>
+
       {/* Gère l'effet de défilement sur le background */}
       <ScrollHandler />
 

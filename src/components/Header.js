@@ -1,5 +1,6 @@
 import React from 'react';
 import MugSection from './MugSection';
+import Bubbles from './animations/Bubbles'; // Import du composant des bulles
 
 // Chemins vers les images utilisées dans le header
 import realiseEnFranceImg from '../assets/header/REALISE_FRANCE.png';
@@ -11,6 +12,8 @@ const Header = () => {
   return (
     <header>
         <div className='header-contain'>
+            {/* Bulles en arrière-plan */}
+            <Bubbles />
             <div className="top-header-images">
                 <div className="realise-en-france">
                     <img className='img-real-france' src={realiseEnFranceImg} alt="Réalisé en France" loading="lazy" />

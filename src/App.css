@@ -66,15 +66,86 @@ body {
 
 /*HEADER*/
 
+/*ANIMATION BUBBLE*/
+/* Conteneur des bulles global */
+.bubbles-container {
+  position: absolute;
+  width: 100%;
+  height: calc(100% + 500px); /* Étend l'effet jusqu'au header */
+  bottom: 0;
+  left: 0;
+  z-index: 0; /* Place les bulles entre le background et le contenu */
+  pointer-events: none;
+}
+
+/* Style des bulles */
+.bubble {
+  position: absolute;
+  bottom: -100px; /* Ajusté pour bien apparaître */
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: bubble-rise linear infinite;
+  z-index: 0;
+}
+
+/* Générer plus de bulles avec des tailles et vitesses ajustées */
+.bubble:nth-child(1) { left: 2%; width: 30px; height: 30px; animation-duration: 15s; animation-delay: 1s; }
+.bubble:nth-child(2) { left: 8%; width: 50px; height: 50px; animation-duration: 18s; animation-delay: 2s; }
+.bubble:nth-child(3) { left: 15%; width: 40px; height: 40px; animation-duration: 20s; animation-delay: 1.5s; }
+.bubble:nth-child(4) { left: 25%; width: 70px; height: 70px; animation-duration: 22s; animation-delay: 2.5s; }
+.bubble:nth-child(5) { left: 35%; width: 60px; height: 60px; animation-duration: 19s; animation-delay: 3s; }
+.bubble:nth-child(6) { left: 45%; width: 30px; height: 30px; animation-duration: 13s; animation-delay: 2s; }
+.bubble:nth-child(7) { left: 55%; width: 80px; height: 80px; animation-duration: 24s; animation-delay: 3.5s; }
+.bubble:nth-child(8) { left: 65%; width: 45px; height: 45px; animation-duration: 16s; animation-delay: 2s; }
+.bubble:nth-child(9) { left: 75%; width: 90px; height: 90px; animation-duration: 25s; animation-delay: 2s; }
+.bubble:nth-child(10) { left: 85%; width: 40px; height: 40px; animation-duration: 14s; animation-delay: 1s; }
+.bubble:nth-child(11) { left: 95%; width: 70px; height: 70px; animation-duration: 21s; animation-delay: 1.8s; }
+.bubble:nth-child(12) { left: 50%; width: 100px; height: 100px; animation-duration: 28s; animation-delay: 0.5s; }
+.bubble:nth-child(13) { left: 70%; width: 55px; height: 55px; animation-duration: 17s; animation-delay: 3s; }
+.bubble:nth-child(14) { left: 30%; width: 85px; height: 85px; animation-duration: 26s; animation-delay: 2s; }
+.bubble:nth-child(15) { left: 90%; width: 50px; height: 50px; animation-duration: 23s; animation-delay: 2.5s; }
+.bubble:nth-child(16) { left: 5%; width: 25px; height: 25px; animation-duration: 8s; animation-delay: 2.2s; }
+.bubble:nth-child(17) { left: 12%; width: 70px; height: 70px; animation-duration: 17s; animation-delay: 1.8s; }
+.bubble:nth-child(18) { left: 28%; width: 40px; height: 40px; animation-duration: 13s; animation-delay: 3s; }
+.bubble:nth-child(19) { left: 38%; width: 55px; height: 55px; animation-duration: 11s; animation-delay: 2.4s; }
+.bubble:nth-child(20) { left: 52%; width: 95px; height: 95px; animation-duration: 22s; animation-delay: 0.8s; }
+.bubble:nth-child(21) { left: 62%; width: 60px; height: 60px; animation-duration: 15s; animation-delay: 1.5s; }
+.bubble:nth-child(22) { left: 77%; width: 45px; height: 45px; animation-duration: 9s; animation-delay: 2.8s; }
+.bubble:nth-child(23) { left: 88%; width: 100px; height: 100px; animation-duration: 23s; animation-delay: 1s; }
+.bubble:nth-child(24) { left: 94%; width: 35px; height: 35px; animation-duration: 12s; animation-delay: 2s; }
+.bubble:nth-child(25) { left: 98%; width: 75px; height: 75px; animation-duration: 18s; animation-delay: 3s; }
+
+
+/* Animation améliorée des bulles */
+@keyframes bubble-rise {
+  0% {
+    transform: translateY(100vh) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-150vh) scale(1.2); /* Ajustement pour disparaître progressivement */
+    opacity: 0;
+  }
+}
+
 header {
   width: 100%;
   max-width: 100vw;
 }
 
 .header-contain {
+  /*Background ardoise*/
+  /*
   background-image: url('./assets/main/texture-ardoise-brosse.webp');
   background-size: 100% calc(100% - 12vw);
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;*/
+  position: relative;
+  background-color: #019EE3; /* Bleu du bandeau */
+  overflow: hidden; /* Évite que les bulles sortent du header */
 }
 
 .top-header-images {
@@ -236,9 +307,14 @@ header {
 }
 
 .caract-mug-container {
+  /*Background ardoise*/
+  /*
   background-image: url('./assets/main/texture-ardoise-brosse.webp');
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;*/
+  position: relative; /* Permet de gérer le positionnement interne */
+  background-color: #019EE3; /* Bleu du bandeau */
+  overflow: hidden; /* Empêche les bulles de sortir */
   display: flex;
   height: 400px;
   text-align: center;
@@ -286,56 +362,6 @@ header {
 .under-text-caract {
   font-size: 0.9em;
   margin: 0;
-}
-
-.footer-comm {
-  background-image: url('./assets/main/texture-ardoise-brosse.webp');
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.title-comm {
-  margin: 0;
-  padding: 75px 0 20px 0;
-  text-align: center;
-  font-family: 'Gotham-Ultra';
-  font-size: 2em;
-  color: #fde581;
-}
-
-.slogan-comm {
-  color: #fffeff;
-  text-align: center;
-  font-size: 1.7em;
-  margin: 0;
-  padding-bottom: 35px;
-  font-family: 'Gotham-Light';
-  font-weight: bold;
-  line-height: 1;
-}
-
-.slogan-text-comm {
-  margin: 0;
-}
-
-.text-comm-container {
-  display: flex;
-  justify-content: center;
-  font-family: 'Gotham-Light';
-  color: #fffeff;
-  padding-bottom: 70px;
-  min-height: 150px;
-}
-
-.under-comm-container {
-  box-sizing: border-box;
-  margin: 0 30px;
-  width: 30%;
-  min-height: 150px;
-}
-
-.text-comm-top {
-  padding-top: 21px;
 }
 
 /* NAV BAR */
@@ -432,98 +458,6 @@ main {
     opacity: 1;
   }
 }
-
-/*
-main {
-  position: relative;
-  width: 100%;
-  min-height: 100vh; 
-  background: linear-gradient(120deg, #D3D3D3 25%, #A7A7A7 75%);
-  background-size: 200% 200%;
-  overflow: hidden;  
-}
-
-.bubbles {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 0;
-}
-
-.bubble {
-  position: absolute;
-  bottom: -100px;
-  width: 40px;
-  height: 40px;
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  animation: bubble-rise 20s infinite ease-in-out;
-  opacity: 0.6;
-}
-
-.bubble:nth-child(1) {
-  left: 10%;
-  width: 60px;
-  height: 60px;
-  animation-duration: 25s;
-  animation-delay: 1s;
-}
-
-.bubble:nth-child(2) {
-  left: 25%;
-  width: 30px;
-  height: 30px;
-  animation-duration: 20s;
-  animation-delay: 3s;
-}
-
-.bubble:nth-child(3) {
-  left: 40%;
-  width: 50px;
-  height: 50px;
-  animation-duration: 30s;
-  animation-delay: 5s;
-}
-
-.bubble:nth-child(4) {
-  left: 55%;
-  width: 80px;
-  height: 80px;
-  animation-duration: 20s;
-  animation-delay: 2s;
-}
-
-.bubble:nth-child(5) {
-  left: 70%;
-  width: 40px;
-  height: 40px;
-  animation-duration: 15s;
-  animation-delay: 4s;
-}
-
-.bubble:nth-child(6) {
-  left: 85%;
-  width: 70px;
-  height: 70px;
-  animation-duration: 18s;
-  animation-delay: 6s;
-}
-
-@keyframes bubble-rise {
-  0% {
-      transform: translateY(0) scale(1);
-      opacity: 0.6;
-  }
-  50% {
-      opacity: 1;
-  }
-  100% {
-      transform: translateY(-900vh) scale(1.2); 
-      opacity: 0;
-  }
-}*/
 
 .mug-display {
   width: 18%;
@@ -831,6 +765,56 @@ main {
 
 /*FOOTER*/
 
+.footer-comm {
+  background-image: url('./assets/main/texture-ardoise-brosse.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.title-comm {
+  margin: 0;
+  padding: 75px 0 20px 0;
+  text-align: center;
+  font-family: 'Gotham-Ultra';
+  font-size: 2em;
+  color: #fde581;
+}
+
+.slogan-comm {
+  color: #fffeff;
+  text-align: center;
+  font-size: 1.7em;
+  margin: 0;
+  padding-bottom: 35px;
+  font-family: 'Gotham-Light';
+  font-weight: bold;
+  line-height: 1;
+}
+
+.slogan-text-comm {
+  margin: 0;
+}
+
+.text-comm-container {
+  display: flex;
+  justify-content: center;
+  font-family: 'Gotham-Light';
+  color: #fffeff;
+  padding-bottom: 70px;
+  min-height: 150px;
+}
+
+.under-comm-container {
+  box-sizing: border-box;
+  margin: 0 30px;
+  width: 30%;
+  min-height: 150px;
+}
+
+.text-comm-top {
+  padding-top: 21px;
+}
+
 .footer-link {
   background-image: url('./assets/main/texture-ardoise-brosse.webp');
   background-size: cover;
@@ -878,16 +862,88 @@ main {
 
   /*HEADER*/
 
+  /*ANIMATION BUBBLE*/
+/* Conteneur des bulles global */
+.bubbles-container {
+  position: absolute;
+  width: 100%;
+  height: calc(100% + 500px); /* Étend l'effet jusqu'au header */
+  bottom: 0;
+  left: 0;
+  z-index: 0; /* Place les bulles entre le background et le contenu */
+  pointer-events: none;
+}
+
+/* Style des bulles */
+.bubble {
+  position: absolute;
+  bottom: -100px; /* Ajusté pour bien apparaître */
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: bubble-rise linear infinite;
+  z-index: 0;
+}
+
+/* Générer plus de bulles avec des tailles et vitesses ajustées */
+.bubble:nth-child(1) { left: 2%; width: 30px; height: 30px; animation-duration: 15s; animation-delay: 1s; }
+.bubble:nth-child(2) { left: 8%; width: 50px; height: 50px; animation-duration: 18s; animation-delay: 2s; }
+.bubble:nth-child(3) { left: 15%; width: 40px; height: 40px; animation-duration: 20s; animation-delay: 1.5s; }
+.bubble:nth-child(4) { left: 25%; width: 70px; height: 70px; animation-duration: 22s; animation-delay: 2.5s; }
+.bubble:nth-child(5) { left: 35%; width: 60px; height: 60px; animation-duration: 19s; animation-delay: 3s; }
+.bubble:nth-child(6) { left: 45%; width: 30px; height: 30px; animation-duration: 13s; animation-delay: 2s; }
+.bubble:nth-child(7) { left: 55%; width: 80px; height: 80px; animation-duration: 24s; animation-delay: 3.5s; }
+.bubble:nth-child(8) { left: 65%; width: 45px; height: 45px; animation-duration: 16s; animation-delay: 2s; }
+.bubble:nth-child(9) { left: 75%; width: 90px; height: 90px; animation-duration: 25s; animation-delay: 2s; }
+.bubble:nth-child(10) { left: 85%; width: 40px; height: 40px; animation-duration: 14s; animation-delay: 1s; }
+.bubble:nth-child(11) { left: 95%; width: 70px; height: 70px; animation-duration: 21s; animation-delay: 1.8s; }
+.bubble:nth-child(12) { left: 50%; width: 100px; height: 100px; animation-duration: 28s; animation-delay: 0.5s; }
+.bubble:nth-child(13) { left: 70%; width: 55px; height: 55px; animation-duration: 17s; animation-delay: 3s; }
+.bubble:nth-child(14) { left: 30%; width: 85px; height: 85px; animation-duration: 26s; animation-delay: 2s; }
+.bubble:nth-child(15) { left: 90%; width: 50px; height: 50px; animation-duration: 23s; animation-delay: 2.5s; }
+.bubble:nth-child(16) { left: 5%; width: 25px; height: 25px; animation-duration: 8s; animation-delay: 2.2s; }
+.bubble:nth-child(17) { left: 12%; width: 70px; height: 70px; animation-duration: 17s; animation-delay: 1.8s; }
+.bubble:nth-child(18) { left: 28%; width: 40px; height: 40px; animation-duration: 13s; animation-delay: 3s; }
+.bubble:nth-child(19) { left: 38%; width: 55px; height: 55px; animation-duration: 11s; animation-delay: 2.4s; }
+.bubble:nth-child(20) { left: 52%; width: 95px; height: 95px; animation-duration: 22s; animation-delay: 0.8s; }
+.bubble:nth-child(21) { left: 62%; width: 60px; height: 60px; animation-duration: 15s; animation-delay: 1.5s; }
+.bubble:nth-child(22) { left: 77%; width: 45px; height: 45px; animation-duration: 9s; animation-delay: 2.8s; }
+.bubble:nth-child(23) { left: 88%; width: 100px; height: 100px; animation-duration: 23s; animation-delay: 1s; }
+.bubble:nth-child(24) { left: 94%; width: 35px; height: 35px; animation-duration: 12s; animation-delay: 2s; }
+.bubble:nth-child(25) { left: 98%; width: 75px; height: 75px; animation-duration: 18s; animation-delay: 3s; }
+
+
+/* Animation améliorée des bulles */
+@keyframes bubble-rise {
+  0% {
+    transform: translateY(100vh) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-150vh) scale(1.2); /* Ajustement pour disparaître progressivement */
+    opacity: 0;
+  }
+}
+
   header {
     width: 100%;
     max-width: 100vw;
   }
 
   .header-contain {
+    /*Background ardoise*/
+    /*
     background-image: url('./assets/main/texture-ardoise-brosse.webp');
     background-size: 100% calc(100% - 12vw);
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;*/
+    position: relative;
+    background-color: #019EE3; /* Bleu du bandeau */
+    overflow: hidden; /* Évite que les bulles sortent du header */
   }
+  
 
   .top-header-images {
     display: flex;
@@ -1048,9 +1104,14 @@ main {
   }
 
   .caract-mug-container {
+    /*Background ardoise*/
+    /*
     background-image: url('./assets/main/texture-ardoise-brosse.webp');
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;*/
+    position: relative; /* Permet de gérer le positionnement interne */
+    background-color: #019EE3; /* Bleu du bandeau */
+    overflow: hidden; /* Empêche les bulles de sortir */
     display: flex;
     height: 400px;
     text-align: center;
@@ -1691,16 +1752,88 @@ main {
 
   /*HEADER*/
 
+  /*ANIMATION BUBBLE*/
+/* Conteneur des bulles global */
+.bubbles-container {
+  position: absolute;
+  width: 100%;
+  height: calc(100% + 500px); /* Étend l'effet jusqu'au header */
+  bottom: 0;
+  left: 0;
+  z-index: 0; /* Place les bulles entre le background et le contenu */
+  pointer-events: none;
+}
+
+/* Style des bulles */
+.bubble {
+  position: absolute;
+  bottom: -100px; /* Ajusté pour bien apparaître */
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: bubble-rise linear infinite;
+  z-index: 0;
+}
+
+/* Générer plus de bulles avec des tailles et vitesses ajustées */
+.bubble:nth-child(1) { left: 2%; width: 30px; height: 30px; animation-duration: 15s; animation-delay: 1s; }
+.bubble:nth-child(2) { left: 8%; width: 50px; height: 50px; animation-duration: 18s; animation-delay: 2s; }
+.bubble:nth-child(3) { left: 15%; width: 40px; height: 40px; animation-duration: 20s; animation-delay: 1.5s; }
+.bubble:nth-child(4) { left: 25%; width: 70px; height: 70px; animation-duration: 22s; animation-delay: 2.5s; }
+.bubble:nth-child(5) { left: 35%; width: 60px; height: 60px; animation-duration: 19s; animation-delay: 3s; }
+.bubble:nth-child(6) { left: 45%; width: 30px; height: 30px; animation-duration: 13s; animation-delay: 2s; }
+.bubble:nth-child(7) { left: 55%; width: 80px; height: 80px; animation-duration: 24s; animation-delay: 3.5s; }
+.bubble:nth-child(8) { left: 65%; width: 45px; height: 45px; animation-duration: 16s; animation-delay: 2s; }
+.bubble:nth-child(9) { left: 75%; width: 90px; height: 90px; animation-duration: 25s; animation-delay: 2s; }
+.bubble:nth-child(10) { left: 85%; width: 40px; height: 40px; animation-duration: 14s; animation-delay: 1s; }
+.bubble:nth-child(11) { left: 95%; width: 70px; height: 70px; animation-duration: 21s; animation-delay: 1.8s; }
+.bubble:nth-child(12) { left: 50%; width: 100px; height: 100px; animation-duration: 28s; animation-delay: 0.5s; }
+.bubble:nth-child(13) { left: 70%; width: 55px; height: 55px; animation-duration: 17s; animation-delay: 3s; }
+.bubble:nth-child(14) { left: 30%; width: 85px; height: 85px; animation-duration: 26s; animation-delay: 2s; }
+.bubble:nth-child(15) { left: 90%; width: 50px; height: 50px; animation-duration: 23s; animation-delay: 2.5s; }
+.bubble:nth-child(16) { left: 5%; width: 25px; height: 25px; animation-duration: 8s; animation-delay: 2.2s; }
+.bubble:nth-child(17) { left: 12%; width: 70px; height: 70px; animation-duration: 17s; animation-delay: 1.8s; }
+.bubble:nth-child(18) { left: 28%; width: 40px; height: 40px; animation-duration: 13s; animation-delay: 3s; }
+.bubble:nth-child(19) { left: 38%; width: 55px; height: 55px; animation-duration: 11s; animation-delay: 2.4s; }
+.bubble:nth-child(20) { left: 52%; width: 95px; height: 95px; animation-duration: 22s; animation-delay: 0.8s; }
+.bubble:nth-child(21) { left: 62%; width: 60px; height: 60px; animation-duration: 15s; animation-delay: 1.5s; }
+.bubble:nth-child(22) { left: 77%; width: 45px; height: 45px; animation-duration: 9s; animation-delay: 2.8s; }
+.bubble:nth-child(23) { left: 88%; width: 100px; height: 100px; animation-duration: 23s; animation-delay: 1s; }
+.bubble:nth-child(24) { left: 94%; width: 35px; height: 35px; animation-duration: 12s; animation-delay: 2s; }
+.bubble:nth-child(25) { left: 98%; width: 75px; height: 75px; animation-duration: 18s; animation-delay: 3s; }
+
+
+/* Animation améliorée des bulles */
+@keyframes bubble-rise {
+  0% {
+    transform: translateY(100vh) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-150vh) scale(1.2); /* Ajustement pour disparaître progressivement */
+    opacity: 0;
+  }
+}
+
   header {
     width: 100%;
     max-width: 100vw;
   }
 
   .header-contain {
+    /*Background ardoise*/
+    /*
     background-image: url('./assets/main/texture-ardoise-brosse.webp');
     background-size: 100% calc(100% - 12vw);
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;*/
+    position: relative;
+    background-color: #019EE3; /* Bleu du bandeau */
+    overflow: hidden; /* Évite que les bulles sortent du header */
   }
+  
 
   .top-header-images {
     display: flex;
@@ -1869,9 +2002,14 @@ main {
   }
 
   .caract-mug-container {
+    /*Background ardoise*/
+    /*
     background-image: url('./assets/main/texture-ardoise-brosse.webp');
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;*/
+    position: relative; /* Permet de gérer le positionnement interne */
+    background-color: #019EE3; /* Bleu du bandeau */
+    overflow: hidden; /* Empêche les bulles de sortir */
     display: flex;
     height: 400px;
     text-align: center;
